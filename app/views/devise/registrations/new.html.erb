@@ -15,9 +15,9 @@
       <%=f.file_field :img_name, id: "file_photo" %>
     </label>
 
-    <div class="UserImgPreview" id="UserImgPreview">
-      <img id="thumbnail" class="UserImgPreview_conttent" accept="image/*" src="">
-      <p class="UserImgPreview_text">画像アップロード済み</p>
+    <div class="userImgPreview" id="userImgPreview">
+      <img id="thumbnail" class="userImgPreview_content" accept="image/*" src="">
+      <p class="userImgPreview_text">画像アップロード済み</p>
     </div>
 
     <div class="form-group">
@@ -42,7 +42,7 @@
 
     <div class="form-group">
       <label>確認用パスワード</label>
-      <%= f.password_field :password, class: "form-control", placeholder: "パスワードを再度入力してください", autocomplete: "off" %>
+      <%= f.password_field :password_confirmation, class: "form-control", placeholder: "パスワードを再度入力してください", autocomplete: "off" %>
     </div>
 
     <div class="form-group">
