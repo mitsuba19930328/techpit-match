@@ -70,3 +70,9 @@ gem 'jquery-rails'
 
 # font-awesome-sass install
 gem "font-awesome-sass"
+
+# carrierwave install
+gem 'carrierwave', '~> 1.0'
+
+# mini_magick install
+gem 'mini_magick'
