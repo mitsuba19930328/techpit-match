@@ -1,0 +1,47 @@
+$main-color:#fd5068;
+$main-text-color:#fff;
+$sub-color:#0099FF;
+
+.userEditPage{
+  .header{
+    padding: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    background: $main-color;
+    color: $main-text-color;
+  }
+  .submitBtn{
+    background-color: $main-color;
+    color: $main-text-color;
+    width: 200px;
+    padding: 10px;
+    border-radius: 90px;
+    transition: opacity .5s;
+    &:hover{
+      opacity: .6;
+    }
+  }
+
+  // .back-container{
+  //   margin-top: 10px;
+  //   text-align: center;
+  // }
+  .back-container{
+    margin-top: 10px;
+    text-align: center;
+
+    .backBtn{
+      background-color: $main-color;
+      width: 200px;
+      padding: 10px;
+      border-radius: 90px;
+      transition: opacity .5s;
+      & > a{
+        color: $main-text-color;
+      }
+      &:hover{
+        opacity: .6;
+      }
+    }
+  }
+}
