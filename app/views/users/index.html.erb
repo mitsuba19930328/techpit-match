@@ -1,3 +1,34 @@
-<% @users.each do |user| %>
-  <div><%= user.name %></div>
-<% end %>
+<div class="topPage">
+  <nav class="nav">
+    <ul>
+      <li class="personIcon"><%= link_to(content_tag(:i, "", class:'fas fa-2x fa-user'), user_path(current_user.id))  %></li>
+      <li class="appIcon"><%= link_to image_tag("techpit-march-icon.png"), action:"index" %></li>
+    </ul>
+  </nav>
+  <div id="tinderslide">
+    <ul>
+      <% @users.each do |user| %>
+      <li data-user_id="<%= user.id %>">
+        <div class="userName"><%= user.name %></div>
+        <div class="userImage"><image src="<%= user.img_name %>"></div>
+        <div class="like"></div>
+        <div class="dislike"></div>
+      </li>
+      <% end %>
+    </ul>
+    <div class="noUser">近くにお相手がいません</div>
+  </div>
+    <div class="actions" id="actionButtonArea">
+      <a href="#" class="like"><i class="fas fa-times fa-2x"></i></a>
+      <a href="#" class="dislike"><i class="fas fa-heart fa-2x"></i></a>
+    </div>
+</div>
+
+<script>
+  <!-- JavaScript -->
+  $("#tinderslide").jTinder();
+  $('actions .like, .actions .dislike').click(function(e){
+    e.preventDefault();
+    $("#tinderslide").jTinder($(this).attr('class'));
+  });
+</script>
