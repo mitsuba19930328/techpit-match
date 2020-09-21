@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root "top#index"
   resources :users, only: %i(index show destroy edit)
   resources :reactions, only: %i(create)
-  resources :matchings, only: %i(index)
+  resources :matching, only: %i(index)
+  resources :chat, only: %i(create show)
 end
