@@ -5,7 +5,7 @@ User.create!(
   name: 'ナスチャ',
   self_introduction: 'ナスチャです',
   sex: 0,
-  img_name: open("#{Rails.root}/db/dummy_img/1.jpg")
+  img_name: open("#{Rails.root}/db/dummy_img/123.jpg")
 )
 User.create!(
   email: 'user2@example.com',
@@ -13,7 +13,7 @@ User.create!(
   name: 'サーシャ',
   self_introduction: 'サーシャです',
   sex: 0,
-  img_name: open("#{Rails.root}/db/dummy_img/2.jpg")
+  img_name: open("#{Rails.root}/db/dummy_img/223.jpg")
 )
 User.create!(
   email: 'user3@example.com',
@@ -29,5 +29,5 @@ User.create!(
   name: 'リリー',
   self_introduction: 'リリーです',
   sex: 1,
-  img_name: open("#{Rails.root}/db/dummy_img/4.jpg")
+  img_name: open("#{Rails.root}/db/dummy_img/423.jpg")
 )

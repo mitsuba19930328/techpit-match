@@ -37,10 +37,10 @@
       </div>
     <% end %>
 
-    <!-- 戻るボタンは未実装（現在フレームだけあり） -->
+    <!-- 戻るボタンは単純にひとつ前に戻る感じに実装 -->
     <div class="back-container">
       <div class="btn backBtn">
-        <%= link_to "戻る", user_registration_path(resource_name) %>
+        <%= link_to "戻る", user_path(current_user.id) %>
       </div>
     </div>
   </div>
