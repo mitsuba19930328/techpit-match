@@ -1,13 +1,8 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :show, :edit]
 
   def index
-    if current_user != nil?
-      # current_userが存在する場合はログイン中ユーザーの画面へ
-      @users = User.where.not(id: current_user&.id)
-    else
-      # current_userがnilの場合はトップ画面へ戻ります
-      redirect_to controller: 'top', action: 'index'
-    end
+    @users = User.where.not(id: current_user.id)
   end
 
   def show

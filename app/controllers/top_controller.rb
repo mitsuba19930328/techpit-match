@@ -1,12 +1,10 @@
 class TopController < ApplicationController
+  before_action :authenticate_user!, only: [:index]
+
   def index
-    # # userは現在ログイン中のユーザーいればその情報が入る
-    # # そうでなければ、nilが入る
-    # @user = User.find_by(id: current_user&.id)
-    # if @user != nil?
-    #   # userがnilでなければ、users/indexへ
-    #   redirect_to controller: 'users', action: 'show'
-    # end
-    # # elseの場合、通常のトップページへ
+    # ログイン中の場合はログインユーザー用トップ画面へ遷移する
+    if user_signed_in?
+      redirect_to users_path
+    end
   end
 end

@@ -1,4 +1,5 @@
 class MatchingController < ApplicationController
+  before_action :authenticate_user!, only: [:index]
 
   def index
     got_reaction_user_ids = Reaction.where(to_user_id: current_user.id, status:'like').pluck(:from_user_id)

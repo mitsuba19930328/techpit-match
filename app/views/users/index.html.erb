@@ -11,7 +11,7 @@
       <% @users.each do |user| %>
       <li data-user_id="<%= user.id %>">
         <div class="userName"><%= user.name %></div>
-        <div class="userImage"><image src="<%= user.img_name&.url(:thumb) %>"></image></div>
+        <div class="userImage"><%= image_tag user.img_name&.url(:thumb) %></div>
         <div class="like"></div>
         <div class="dislike"></div>
       </li>
@@ -19,10 +19,10 @@
     </ul>
     <div class="noUser">近くにお相手がいません</div>
   </div>
-    <div class="actions" id="actionButtonArea">
-      <a href="#" class="like"><i class="fas fa-times fa-2x"></i></a>
-      <a href="#" class="dislike"><i class="fas fa-heart fa-2x"></i></a>
-    </div>
+  <div class="actions" id="actionBtnArea">
+    <a href="#" class="dislike"><i class="fas fa-times fa-2x"></i></a>
+    <a href="#" class="like"><i class="fas fa-heart fa-2x"></i></a>
+  </div>
 </div>
 
 <script>
@@ -68,14 +68,14 @@
   });
   $('.actions .like, .actions .dislike').click(function(e){
     e.preventDefault();
-    $("#tinderSlide").jTinder($(this).attr('class'));
+    $("#tinderslide").jTinder($(this).attr('class'));
   });
 
   // スワイプするユーザー数とスワイプした回数が同じになればaddClassする
   function checkUserNum(){
     if(currentUserIndex === usersNum){
       $(".noUser").addClass("is-active");
-      $("#actionButtonArea").addClass("is-none")
+      $("#actionBtnArea").addClass("is-none")
       return;
     }
   }
